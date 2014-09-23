@@ -2,7 +2,6 @@
   "name": "react-rails-starterkit",
   "version": "0.0.0",
   "description": "React on Rails starter kit",
-  "main": "dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,8 +21,14 @@
   "homepage": "https://github.com/elierotenberg/react-rails-starterkit",
   "dependencies": {
     "assert": "^1.1.2",
+    "cors": "^2.4.2",
     "express": "^4.9.4",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-exec": "^0.4.6",
+    "grunt-regenerator": "^1.1.0",
     "lodash": "^2.4.1",
+    "node-getopt": "^0.2.3",
     "normalize.css": "^3.0.1"
   }
 }

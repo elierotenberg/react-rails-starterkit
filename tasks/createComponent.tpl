@@ -2,6 +2,7 @@
 var R = require("react-rails");
 var React = require("react");
 var _ = require("lodash");
+var components = require("../componentsClasses");
 
 var <%= displayName %> = React.createClass(/** @lends <%= displayName %>.prototype */{
     mixins: [R.Component.Mixin],
