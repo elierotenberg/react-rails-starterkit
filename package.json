@@ -1,0 +1,29 @@
+{
+  "name": "react-rails-starterkit",
+  "version": "0.0.0",
+  "description": "React on Rails starter kit",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/elierotenberg/react-rails-starterkit.git"
+  },
+  "keywords": [
+    "react",
+    "react-rails"
+  ],
+  "author": "Elie Rotenberg <elie@rotenberg.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elierotenberg/react-rails-starterkit/issues"
+  },
+  "homepage": "https://github.com/elierotenberg/react-rails-starterkit",
+  "dependencies": {
+    "assert": "^1.1.2",
+    "express": "^4.9.4",
+    "lodash": "^2.4.1",
+    "normalize.css": "^3.0.1"
+  }
+}
