@@ -10,4 +10,4 @@ express()
 .use(new R.RenderServer(App).middleware)
 .listen(config.renderServer.port);
 
-console.log("Render Server listening on " config.renderServer.hostname + ":" + config.renderServer.port);
+console.log("Render Server listening on " + config.renderServer.hostname + ":" + config.renderServer.port);

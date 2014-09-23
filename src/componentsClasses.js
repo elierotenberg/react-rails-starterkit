@@ -1,3 +1,3 @@
 module.exports = {
-    Root: require("./Root");
+    Root: require("./components/Root"),
 };

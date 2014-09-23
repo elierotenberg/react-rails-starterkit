@@ -15,7 +15,7 @@ var App = R.createApp({
             _.defer(function() {
                 fn(null, _.extend({
                     lang: R.Localize.extractLocale(req.headers, config.supportedLocales),
-                }, router.match(req.path));
+                }, router.match(req.path)));
             });
         };
     },

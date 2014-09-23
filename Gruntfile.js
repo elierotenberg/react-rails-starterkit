@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: "src",
-                    src: ["*.js"],
+                    src: ["**/*.js"],
                     dest: "tmp/",
                 }],
                 options: {
@@ -32,9 +32,17 @@ module.exports = function(grunt) {
                     includeRuntime: true,
                 },
             },
-            server: {
+            "render-server": {
                 files: {
-                    "tmp/server.js": "src/server.js",
+                    "tmp/render-server.js": "src/render-server.js",
+                },
+                options: {
+                    includeRuntime: true,
+                },
+            },
+            "uplink-server": {
+                files: {
+                    "tmp/uplink-server.js": "src/uplink-server.js",
                 },
                 options: {
                     includeRuntime: true,
@@ -45,9 +53,9 @@ module.exports = function(grunt) {
             default: {
                 files: [{
                     expand: true,
-                    cwd: "src",
-                    src: ["*.jsx"],
-                    dest: "src/",
+                    cwd: "src/components",
+                    src: ["**/*.jsx"],
+                    dest: "src/components",
                     ext: ".js",
                 }],
             },
@@ -113,6 +121,7 @@ module.exports = function(grunt) {
         "grunt-contrib-jshint",
         "grunt-react",
         "grunt-contrib-copy",
+        "grunt-contrib-clean",
         "grunt-exec",
         "grunt-browserify",
         "grunt-contrib-uglify",

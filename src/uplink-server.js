@@ -9,4 +9,4 @@ new UplinkServer()
 .installHandlers(express().use(cors()), config.uplinkServer.prefix)
 .listen(config.uplinkServer.port);
 
-console.log("Uplink Server listening on " config.uplinkServer.hostname + ":" + config.uplinkServer.port);
+console.log("Uplink Server listening on " + config.uplinkServer.hostname + ":" + config.uplinkServer.port);

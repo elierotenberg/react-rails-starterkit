@@ -7,7 +7,7 @@ var Uplink = function Uplink(guid) {
     if(R.isClient()) {
         uplink = new R.Uplink(url, url, guid);
     }
-    if(R.isServer() {
+    if(R.isServer()) {
         uplink = new R.Uplink(url, null, guid);
     }
     return uplink;

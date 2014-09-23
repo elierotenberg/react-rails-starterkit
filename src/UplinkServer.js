@@ -15,7 +15,8 @@ var UplinkServer = function UplinkServer() {
             ];
         },
         sessionDestroyed: function *sessionDestroyed(guid) {
-            yield: [
+            yield [
+                // clear session side-effects
             ];
         },
         store: [

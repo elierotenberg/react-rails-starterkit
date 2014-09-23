@@ -12,7 +12,7 @@ module.exports = function importAllComponents(grunt) {
         var componentName = fileName.slice(0, -ext.length);
         grunt.log.writeln("Importing: " + componentName);
         ++count;
-        components.push(componentName + ': require("./' + componentName + '");');
+        components.push(componentName + ': require("./components/' + componentName + '"),');
     });
 
     var src = components.join("\n    ") + "\n};\n";
