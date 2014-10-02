@@ -13,7 +13,6 @@ var Flux = R.Flux.createFlux({
     bootstrap: function* bootstrap(uplink) {
         this.registerStore("memory", new MemoryStore());
         this.registerStore("uplink", new UplinkStore(uplink));
-        this.registerStylesheet("components", new R.Stylesheet());
         yield Promise.resolve(void 0);
     },
     bootstrapInClient: function* bootstrapInClient(window, headers, guid) {
