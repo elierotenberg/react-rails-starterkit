@@ -1,7 +1,7 @@
 var fs = require("fs");
 var _ = require("lodash");
 var config = require("../config");
-var R = require("react-rails").install(config.install);
+var R = require("react-rails");
 var requireDir = require("require-dir");
 
 

@@ -10,7 +10,6 @@ var router = new NavigationRouter();
 var App = R.App.createApp({
     fluxClass: require("./Flux"),
     rootClass: require("./components/Root"),
-    componentsClasses: require("./componentsClasses"),
     bootstrapTemplateVarsInServer: function bootstrapTemplateVarsInServer(req) {
         return function(fn) {
             _.defer(function() {

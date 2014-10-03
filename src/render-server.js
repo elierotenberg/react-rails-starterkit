@@ -1,5 +1,5 @@
 var config = require("../config");
-var R = require("react-rails").install(config.install);
+var R = require("react-rails");
 var express = require("express");
 var cors = require("cors");
 var App = require("./App");

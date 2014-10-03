@@ -9,8 +9,6 @@ catch(err) {}
 
 var config = {
     install: {
-        React: require("react"),
-        instantiateReactComponent: require("react/lib/instantiateReactComponent"),
         mode: mode,
     },
     supportedLocales: ["en-US", "fr-FR"],

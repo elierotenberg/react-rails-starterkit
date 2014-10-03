@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var R = require("react-rails");
-var React = require("react");
+var React = R.React;
 var _ = require("lodash");
 var co = require("co");
 var assert = require("assert");

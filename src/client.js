@@ -1,5 +1,6 @@
 var config = require("../config");
-var R = require("react-rails").install(config.install);
+var R = require("react-rails");
+window.React = R.React;
 var co = require("co");
 global.Promise = require("bluebird");
 
