@@ -1,4 +1,5 @@
 var _ = require("lodash");
+require("regenerator/runtime");
 var spawn = require("child_process").spawn;
 var watch = require("node-watch");
 

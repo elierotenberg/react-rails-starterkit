@@ -1,4 +1,5 @@
 var config = require("../config");
+require("regenerator/runtime");
 var R = require("react-rails");
 var express = require("express");
 var cors = require("cors");

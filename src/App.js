@@ -20,7 +20,10 @@ var App = R.App.createApp({
         };
     },
     vars: {
-        stylesheets: ["/normalize.css", "/components.css"],
+        stylesheets: [
+            "/normalize.css",
+            "/components.css",
+        ],
         scripts: ["/client.js"],
     },
     template: function template(vars, libs) {
@@ -31,7 +34,7 @@ var App = R.App.createApp({
     },
     plugins: {
         "Window": R.Window.createPlugin("memory", "memory"),
-        "History": R.History.createPlugin("memory", "memory"),
+        "History": R.History.createPlugin("memory", "memory", "memory"),
         "Localize": R.Localize.createPlugin("memory", "memory", config.supportedLocales),
         "Fullscreen": R.Fullscreen.createPlugin("memory", "memory"),
         "XWindow": R.XWindow.createPlugin("memory", "memory"),
