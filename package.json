@@ -1,6 +1,6 @@
 {
   "name": "react-rails-starterkit",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React on Rails starter kit",
   "scripts": {
     "start": "node dist/server.js",
@@ -41,7 +41,7 @@
     "gulp-plumber": "^0.6.6",
     "gulp-postcss": "^2.0.0",
     "gulp-react": "^1.0.2",
-    "gulp-react-rails-style": "0.0.4",
+    "gulp-react-rails-style": "^0.1.0",
     "gulp-regenerator": "^1.1.0",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^1.0.1",

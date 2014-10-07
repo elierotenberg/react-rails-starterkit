@@ -102,9 +102,16 @@ var copyStatics = function copyStatics() {
 var compileStyles = function compileStyles() {
     return gulp.src("dist/components/*.js")
     .pipe(plumber())
-    .pipe(style())
+    .pipe(style(__dirname + "/dist/styles"))
     .pipe(postcss([]))
     .pipe(gulp.dest("static"))
+};
+
+var imageMin = function imageMin() {
+    return gulp.src("images/*.{png,jpg,gif,svg}")
+    .pipe(plumber())
+    .pipe(imagemin())
+    .pipe(gulp.dest("static"));
 };
 
 var promisify = function promisify(stream, name) {
@@ -156,11 +163,6 @@ gulp.task("component", function() {
     createComponent(gutil.env.displayName, gutil.env.tagName);
 });
 
-gulp.task("imagemin", function() {
-    gulp.src(["images/*.{png,jpg,gif,svg}"])
-    .pipe(plumber())
-    .pipe(imagemin())
-    .pipe(gulp.dest("static"));
-});
+gulp.task("imagemin", imageMin);
 
-gulp.task("default", ["build"]);
+gulp.task("default", ["build", "imagemin"]);

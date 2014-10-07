@@ -21,8 +21,10 @@ var App = R.App.createApp({
     },
     vars: {
         stylesheets: [
-            "/normalize.css",
-            "/components.css",
+            "/normalize.css",                                                   // normalize.css
+            "/components.css",                                                  // generated components CSS
+            "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300",   // Google WebFonts: Open Sans Condensed
+            "http://fonts.googleapis.com/css?family=Roboto",                    // Google WebFonts: Roboto
         ],
         scripts: ["/client.js"],
     },

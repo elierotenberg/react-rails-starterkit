@@ -62,11 +62,12 @@ This starter kit contains:
         - reduce console verbosity,
         - disable long traces support for `setImmediate` and `Promise`.
 
-    - `gulp watch` that "just works", including `watchify + browserify` for super fast incremental builds,
+    - `gulp watch` that "just works", including a custom livereload implementation for super fast dev workflow,
 
     - Style processing
         - `normalize.css` included by default,
         - `autoprefixer` and `css-min` (in `production` mode) on components styles and stylesheets,
+        - `imagemin` from `images/` to `static/`,
         - optionally declare your components' style in their class definition, they get processed
         and bundled into `components.css` and served statically. Who needs a CSS preprocessor when you
         get the full power of JS?
@@ -77,7 +78,7 @@ This starter kit contains:
     - A memory-based Flux (Store/EventEmitter/Dispatcher) named `memory`
     - An uplink-based Flux named `uplink`
     - A static server, serving `static/` under the path `/`
-    - A prerendering server,
+    - A prerendering server to ease SEO and mobile rendering,
     - A basic Uplink server implementing Flux over the wire,
     - Preconfigured plugins for React of Rails:
         - `R.History`, managing navigation,
@@ -91,7 +92,6 @@ This starter kit contains:
     named `MyComponent` in `src/components`, and populates its `render` method with the appropriate JSX element.
     JSX element tagName defaults to div, but can be anything like "span", "MyOtherComponent", etc.
     Component name should match /[A-Z][a-zA-Z0-9]*$/, ie. be like MyComponent, not like myComponent or my_Component.
-    - `gulp import-all-components` to update `src/componentsClasses` to reflect all the components in `src/components`.
     - `npm start` that "just works".
 
 
@@ -134,15 +134,7 @@ Project root
 |
 +--gulpfile.js
 |    Contains a series of preconfigured tasks. You can safely add yours.
-|    Notable tasks include:
-|      - `default`, which builds everything, puts the server executables in `dist` and the
-|         bundled client in `static`,
-|      - `watch`, which automatically rebuilds everything incrementally (leveraging
-|         `watchify` for `browserify` and `gulp-cached` for other tasks)
-|      - `component`, which bootstraps a new component using eg.
-|        `gulp component --displayName="MyComponent"`
-|      - `styles`, interprets all styles declared in components sources, and bundles them
-|        into `static/components.css`.
+|
 +--src
 |  |  Single source of truth for the building pipeline. Contains all of your actual source.
 |  |  Files in this directory will be transpiled to ES3, but you can safely use `jsx` tags
@@ -309,6 +301,9 @@ Project root
 +--dist
 |  Don't put anything here. Its intented to be populated and cleaned by automated tasks.
 |
++--images
+|  Put your unminified images here. They will get minified and copied to `static` by `gulp`.
+|
 +--static
 |  All files in this directory will be publicly accessible.
 |  This is were the browserified client build is put, as `client.js`.
@@ -318,12 +313,6 @@ Project root
 |
 +--tasks
 |  |  Quality of life tasks to ease your development/deployment experience.
-|  |
-|  +--createAllComponentsStylesheets.js
-|  |  Extracts all the styles declared inside components source files, process them, and
-|  |  bundles them into the appropriate .css files in `static/`. For example, if a components'
-|  |  `statics.getStylesheetRules` returned { components: ..., main: ... }, then the rules
-|  |  will respectively get dumped into `static/components.css` and `static/main.css`.
 |  |
 |  +--createComponent.js
 |  |  Pass a component name as `--displayName="ComponentName"`.

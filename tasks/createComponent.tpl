@@ -4,6 +4,7 @@ var React = R.React;
 var _ = require("lodash");
 var co = require("co");
 var assert = require("assert");
+var styles = require("../styles");
 
 var <%= displayName %> = React.createClass(/** @lends <%= displayName %>.prototype */{
     mixins: [R.Component.Mixin],

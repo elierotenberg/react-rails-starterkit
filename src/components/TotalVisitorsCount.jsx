@@ -4,6 +4,7 @@ var React = R.React;
 var _ = require("lodash");
 var co = require("co");
 var assert = require("assert");
+var styles = require("../styles");
 
 var TotalVisitorsCount = React.createClass(/** @lends TotalVisitorsCount.prototype */{
     mixins: [R.Component.Mixin],
