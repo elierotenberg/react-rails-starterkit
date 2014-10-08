@@ -34,7 +34,7 @@
     "gulp": "^3.8.8",
     "gulp-cached": "^1.0.1",
     "gulp-changed": "^1.0.0",
-    "gulp-esnext": "^1.1.0",
+    "gulp-esnext": "^1.2.0",
     "gulp-imagemin": "^1.0.1",
     "gulp-jshint": "^1.8.5",
     "gulp-nodemon": "^1.0.4",

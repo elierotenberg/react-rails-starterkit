@@ -16,7 +16,6 @@ var del = require("del");
 var _ = require("lodash");
 var R = require("react-rails");
 var postcss = require("gulp-postcss");
-var postcssurl = require("postcss-url");
 var imagemin = require("gulp-imagemin");
 var merge = require("merge-stream");
 var createComponent = require("./tasks/createComponent");
@@ -36,6 +35,15 @@ var jshintOptions = {
     esnext: true,
 };
 
+var bustConfig = function bustConfig() {
+    var module = require.resolve("./config");
+    if(require.cache[module]) {
+        delete require.cache[module];
+        require("./config");
+    };
+    return Promise.resolve(void 0);
+};
+
 var browserifyClient = function browserifyClient() {
     var b = browserify({
         fullPaths: false,
@@ -44,9 +52,11 @@ var browserifyClient = function browserifyClient() {
         ignoreMissing: ["promise"],
     });
 
+    var NODE_ENV = prod ? "production": "development";
+
     b.transform("brfs");
     b.transform(envify({
-        NODE_ENV: prod ? "production": "development",
+        NODE_ENV: NODE_ENV,
     }));
 
     return b.bundle()
@@ -102,16 +112,9 @@ var copyStatics = function copyStatics() {
 var compileStyles = function compileStyles() {
     return gulp.src("dist/components/*.js")
     .pipe(plumber())
-    .pipe(style(__dirname + "/dist/styles"))
+    .pipe(style(__dirname + "/dist/globals"))
     .pipe(postcss([]))
     .pipe(gulp.dest("static"))
-};
-
-var imageMin = function imageMin() {
-    return gulp.src("images/*.{png,jpg,gif,svg}")
-    .pipe(plumber())
-    .pipe(imagemin())
-    .pipe(gulp.dest("static"));
 };
 
 var promisify = function promisify(stream, name) {
@@ -128,6 +131,9 @@ var promisify = function promisify(stream, name) {
 
 gulp.task("build", function(done) {
     promisify(lint(), "lint")
+    .then(function() {
+        return bustConfig();
+    })
     .then(function() {
         return Promise.all([
             promisify(compileSources(), "compileSources"),
@@ -155,7 +161,7 @@ gulp.task("clean", function() {
 });
 
 gulp.task("watch", function() {
-    gulp.watch("src/**/*", ["build"]);
+    gulp.watch(["src/**/*", "config.js"], ["build"]);
     gulp.watch("images/**/*", ["imagemin"]);
 });
 
@@ -163,6 +169,11 @@ gulp.task("component", function() {
     createComponent(gutil.env.displayName, gutil.env.tagName);
 });
 
-gulp.task("imagemin", imageMin);
+gulp.task("imagemin", function() {
+    gulp.src(["images/*.{png,jpg,gif,svg}"])
+    .pipe(plumber())
+    .pipe(imagemin())
+    .pipe(gulp.dest("static"));
+});
 
 gulp.task("default", ["build", "imagemin"]);

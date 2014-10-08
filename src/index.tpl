@@ -4,6 +4,7 @@
     <head>
         <% if(vars.charset) { %><meta charset="<%- vars.charset %>"><% } else { %><meta charset="utf-8"><% } %>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <% if(vars.base) { %><base href="<%- vars.base %>" /><% } %>
         <% if(vars.description) { %><meta name="description" content="<%- vars.description %>"><% } %>
         <% if(vars.viewport) { %><meta name="viewport" content="<%- vars.viewport %>"><% } else { %><meta name="viewport" content="width=device-width, initial-scale=1"><% } %>
         <% if(vars.title) { %><title><%- vars.title %></title><% } %>

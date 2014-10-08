@@ -1,5 +1,5 @@
-var R = require("react-rails");
 require("regenerator/runtime");
+var R = require("react-rails");
 window.React = R.React;
 var co = require("co");
 global.Promise = require("bluebird");
