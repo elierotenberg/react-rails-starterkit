@@ -1,6 +1,6 @@
 {
   "name": "react-rails-starterkit",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "React on Rails starter kit",
   "scripts": {
     "start": "node dist/server.js",

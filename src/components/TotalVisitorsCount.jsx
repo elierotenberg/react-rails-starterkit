@@ -22,12 +22,12 @@ var TotalVisitorsCount = React.createClass(/** @lends TotalVisitorsCount.prototy
     },
     getFluxStoreSubscriptions: function getFluxStoreSubscriptions(props) {
         return {
-            "uplink://totalVisitorsCount": "totalVisitorsCount",
+            "uplink://counters": "counters",
         };
     },
     render: function render() {
         return (<div className="TotalVisitorsCount">
-            TotalVisitorsCount: {this.state.totalVisitorsCount}
+            TotalVisitorsCount: {this.state.counters ? this.state.counters.total : null}
         </div>);
     },
 });

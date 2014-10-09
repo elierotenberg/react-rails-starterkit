@@ -22,12 +22,12 @@ var CurrentVisitorsCount = React.createClass(/** @lends CurrentVisitorsCount.pro
     },
     getFluxStoreSubscriptions: function getFluxStoreSubscriptions(props) {
         return {
-            "uplink://currentVisitorsCount": "currentVisitorsCount",
+            "uplink://counters": "counters",
         };
     },
     render: function render() {
         return (<div className="CurrentVisitorsCount">
-            CurrentVisitorsCount: {this.state.currentVisitorsCount}
+            CurrentVisitorsCount: {this.state.counters ? this.state.counters.current : null}
         </div>);
     },
 });
