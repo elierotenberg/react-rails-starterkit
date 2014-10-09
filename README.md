@@ -66,8 +66,6 @@ This starter kit contains:
         - reduce console verbosity,
         - disable long traces support for `setImmediate` and `Promise`.
 
-    - `gulp watch` that "just works", including `watchify + browserify` for super fast incremental builds,
-
     - Style processing
         - `normalize.css` included by default,
         - `autoprefixer` and `css-min` (in `production` mode) on components styles and stylesheets,
@@ -141,12 +139,9 @@ Project root
 |    Notable tasks include:
 |      - `default`, which builds everything, puts the server executables in `dist` and the
 |         bundled client in `static`,
-|      - `watch`, which automatically rebuilds everything incrementally (leveraging
-|         `watchify` for `browserify` and `gulp-cached` for other tasks)
+|      - `watch`, which automatically rebuilds everything that changes,
 |      - `component`, which bootstraps a new component using eg.
 |        `gulp component --displayName="MyComponent"`
-|      - `styles`, interprets all styles declared in components sources, and bundles them
-|        into `static/components.css`.
 +--src
 |  |  Single source of truth for the building pipeline. Contains all of your actual source.
 |  |  Files in this directory will be transpiled to ES3, but you can safely use `jsx` tags
