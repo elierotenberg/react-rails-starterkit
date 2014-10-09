@@ -4,3 +4,6 @@ tmp
 *.pid
 *.lock
 npm-debug.log
+static/components.css
+static/client.js
+static/normalize.css

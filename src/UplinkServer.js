@@ -5,40 +5,35 @@ var _ = require("lodash");
 var UplinkServer = R.SimpleUplinkServer.createServer({
     sessionTimeout: 10000,
     _locks: {
-        totalVisitorsCount: new R.Lock(),
-        currentVisitorsCount: new R.Lock(),
+        counters: new R.Lock(),
     },
     bootstrap: function *bootstrap() {
-        yield [
-            this._locks.totalVisitorsCount.perform(R.scope(function*() {
-                yield this.setStore("/totalVisitorsCount", 0);
-            }, this)),
-            this._locks.currentVisitorsCount.perform(R.scope(function*() {
-                yield this.setStore("/currentVisitorsCount", 0);
-            }, this)),
-        ];
+        yield this._locks.counters.acquire();
+        yield this.setStore("/counters", {
+            total: 0,
+            current: 0,
+        });
+        this._locks.counters.release();
     },
     sessionCreated: function *sessionCreated(guid) {
-        yield [
-            this._locks.totalVisitorsCount.perform(R.scope(function*() {
-                var totalVisitorsCount = yield this.getStore("/totalVisitorsCount");
-                yield this.setStore("/totalVisitorsCount", totalVisitorsCount + 1);
-            }, this)),
-            this._locks.currentVisitorsCount.perform(R.scope(function*() {
-                var currentVisitorsCount = yield this.getStore("/currentVisitorsCount");
-                yield this.setStore("/currentVisitorsCount", currentVisitorsCount + 1);
-            }, this)),
-        ];
+        yield this._locks.counters.acquire();
+        var counter = yield this.getStore("/counters");
+        yield this.setStore("/counters", {
+            total: counter.total + 1,
+            current: counter.current + 1,
+        });
+        this._locks.counters.release();
     },
     sessionDestroyed: function *sessionDestroyed(guid) {
-        yield this._locks.currentVisitorsCount.perform(R.scope(function*() {
-            var currentVisitorsCount = yield this.getStore("/currentVisitorsCount");
-            yield this.setStore("/currentVisitorsCount", currentVisitorsCount - 1);
-        }, this));
+        yield this._locks.counters.acquire();
+        var counters = yield this.getStore("/counters");
+        yield this.setStore("/counters", _.extend(counters, {
+            current: counters.current - 1,
+        }));
+        this._locks.counters.release();
     },
     store: [
-        "/totalVisitorsCount",
-        "/currentVisitorsCount",
+        "/counters",
     ],
     events: [
         // <whitelisted room>
