@@ -112,7 +112,7 @@ var copyStatics = function copyStatics() {
 var compileStyles = function compileStyles() {
     return gulp.src("dist/components/*.js")
     .pipe(plumber())
-    .pipe(style(__dirname + "/dist/globals"))
+    .pipe(style(__dirname + "/dist/styles"))
     .pipe(postcss([]))
     .pipe(gulp.dest("static"))
 };
