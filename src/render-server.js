@@ -11,4 +11,4 @@ express()
 .use(new R.RenderServer(App).middleware)
 .listen(config.renderServer.port);
 
-console.warn("Render Server listening on " + config.renderServer.hostname + ":" + config.renderServer.port);
+console.warn("Render Server listening on http://" + config.renderServer.hostname + ":" + config.renderServer.port);
