@@ -9,6 +9,7 @@ Usage
 0. `npm install`
 0. Hack the code
 0. `npm start`
+0. `gulp watch`
 0. Visit `http://localhost:8080/`
 
 Important note: Don't `npm install react` or anything similar. `react-rails` includes its own version of React,
