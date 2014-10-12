@@ -1,4 +1,4 @@
-var R = require("react-rails");
+var R = require('react-rails');
 
 var MemoryEventEmitter = R.EventEmitter.createMemoryEventEmitter();
 
