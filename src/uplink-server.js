@@ -14,6 +14,6 @@ co(function*() {
     }
     else {
         server.listen(config.uplinkServer.port);
-        console.log("Uplink Server listening on " + config.uplinkServer.hostname + ":" + config.uplinkServer.port);
+        console.log("Uplink Server listening on http://" + config.uplinkServer.hostname + ":" + config.uplinkServer.port);
     }
 });
