@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 var R = require("react-rails");
 var React = R.React;
 var _ = require("lodash");

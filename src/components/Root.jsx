@@ -1,13 +1,10 @@
-/** @jsx React.DOM */
 var R = require("react-rails");
 var React = R.React;
 var _ = require("lodash");
 var co = require("co");
 var assert = require("assert");
 var styles = require("../styles");
-
 var Pages = require("./Pages");
-
 var Root = React.createClass(/** @lends Root.prototype */{
     mixins: [R.Root.Mixin],
     statics: {
