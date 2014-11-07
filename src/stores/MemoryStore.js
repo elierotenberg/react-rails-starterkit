@@ -1,4 +1,4 @@
-var R = require("react-rails");
+var R = require('react-rails');
 
 var MemoryStore = R.Store.createMemoryStore();
 

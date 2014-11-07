@@ -1,31 +1,33 @@
-/** @jsx React.DOM */
-var R = require("react-rails");
+var R = require('react-rails');
 var React = R.React;
-var _ = require("lodash");
-var co = require("co");
-var assert = require("assert");
-var styles = require("../styles");
+var _ = require('lodash');
+var co = require('co');
+var styles = require('../styles');
 
 var <%= displayName %> = React.createClass(/** @lends <%= displayName %>.prototype */{
     mixins: [R.Component.Mixin],
+
     propTypes: {
     },
+
     statics: {
-        getStylesheetRules: function getStylesheetRules() {
+        getStylesheetRules() {
             return {
-                "components": {
-                    ".<%= displayName %>": {
+                'components': {
+                    '.<%= displayName %>': {
                     },
                 },
             };
         },
     },
-    getFluxStoreSubscriptions: function getFluxStoreSubscriptions(props) {
+
+    getFluxStoreSubscriptions(props) {
         return {
         };
     },
-    render: function render() {
-        return (<<%= tagName %> className="<%= displayName %>">
+
+    render() {
+        return (<<%= tagName %> className='<%= displayName %>'>
         </<%= tagName %>>);
     },
 });
