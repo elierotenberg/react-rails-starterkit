@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var AboutPage = require('./AboutPage');
 var CurrentVisitorsCount = require('./CurrentVisitorsCount');
 var HistoryLink = require('./HistoryLink');

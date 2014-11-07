@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var Pages = require('./Pages');
 var R = require('react-rails');
 var React = R.React;
