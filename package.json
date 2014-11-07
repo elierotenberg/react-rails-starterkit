@@ -1,6 +1,6 @@
 {
   "name": "react-rails-starterkit",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "React on Rails starter kit",
   "scripts": {
     "start": "node dist/server.js",
@@ -53,7 +53,7 @@
     "normalize.css": "^3.0.1",
     "open": "0.0.5",
     "postcss-url": "^1.0.0",
-    "react-rails": "^0.2.4",
+    "react-rails": "^0.2.5",
     "react-tools": "^0.11.2",
     "regenerator": "^0.6.5",
     "through2": "^0.6.2",
