@@ -1,9 +1,7 @@
-/* global __dirname: false */
-
 var R = require('react-rails');
 var NavigationRouter = require('./routers/NavigationRouter');
 
-var _ = require('lodash');
+var _ = require('lodash-next');
 var config = require('../config');
 var fs = require('fs');
 

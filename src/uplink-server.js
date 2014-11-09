@@ -1,5 +1,3 @@
-require('regenerator/runtime');
-
 var UplinkServer = require('./UplinkServer');
 
 var co = require('co');

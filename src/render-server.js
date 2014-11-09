@@ -1,7 +1,3 @@
-/*global __dirname: false*/
-
-require('regenerator/runtime');
-
 var App = require('./App');
 var R = require('react-rails');
 

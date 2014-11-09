@@ -23,7 +23,7 @@ var CurrentVisitorsCount = React.createClass({
 
   render() {
     return (
-      <div className="CurrentVisitorsCount">
+      <div className='CurrentVisitorsCount'>
         CurrentVisitorsCount: {this.state.counters ? this.state.counters.current : null}
       </div>
     );

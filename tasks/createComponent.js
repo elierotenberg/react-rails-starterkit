@@ -1,6 +1,6 @@
 var assert = require('assert');
 var fs = require('fs');
-var _ = require('lodash');
+var _ = require('lodash-next');
 
 module.exports = function createComponent(displayName, tagName) {
     tagName = tagName || 'div';

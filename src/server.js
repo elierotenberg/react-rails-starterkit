@@ -1,7 +1,4 @@
-/*global __dirname: false*/
-
-require('regenerator/runtime');
-var _ = require('lodash');
+var _ = require('lodash-next');
 var spawn = require('child_process').spawn;
 var watch = require('node-watch');
 

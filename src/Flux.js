@@ -1,7 +1,6 @@
 var MemoryDispatcher = require('./dispatchers/MemoryDispatcher');
 var MemoryEventEmitter = require('./eventEmitters/MemoryEventEmitter');
 var MemoryStore = require('./stores/MemoryStore');
-var Promise = require('bluebird');
 var R = require('react-rails');
 var Uplink = require('./Uplink');
 var UplinkDispatcher = require('./dispatchers/UplinkDispatcher');

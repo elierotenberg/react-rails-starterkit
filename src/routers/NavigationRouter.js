@@ -1,5 +1,5 @@
 var R = require('react-rails');
-var _ = require('lodash');
+var _ = require('lodash-next');
 
 class NavigationRouter extends R.Router {
   constructor() {

@@ -17,7 +17,7 @@ var AboutPage = React.createClass({
 
   render() {
     return (
-      <div className="AboutPage">
+      <div className='AboutPage'>
         <h2>About page</h2>
       </div>
     );

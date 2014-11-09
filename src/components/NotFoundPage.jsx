@@ -10,7 +10,7 @@ var NotFoundPage = React.createClass({
 
   render() {
     return (
-      <div className="NotFoundPage">
+      <div className='NotFoundPage'>
         <h2>Not found page</h2>
         <div>Requested splat: {this.props.splat}</div>
       </div>

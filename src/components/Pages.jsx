@@ -89,7 +89,7 @@ var Pages = React.createClass({
   fluxStoreDidUpdate() {
     var route = navigationRouter.match(this.state.pathname);
     document.querySelector('title').innerHTML = route.title;
-    document.querySelector('meta[name="description"]')
+    document.querySelector('meta[name=\'description\']')
       .setAttribute('description', route.description);
   },
 
@@ -104,22 +104,22 @@ var Pages = React.createClass({
 
   render() {
     return (
-      <div className="Pages">
-        <header className="Pages-header">
+      <div className='Pages'>
+        <header className='Pages-header'>
           <h1>React on Rails</h1>
-          <h2>A <a href="http://reactjs.org"><img className="Pages-ReactLogo" src="/ReactLogo.svg" />React</a> Framework for building Real-World WebApps</h2>
+          <h2>A <a href='http://reactjs.org'><img className='Pages-ReactLogo' src='/ReactLogo.svg' />React</a> Framework for building Real-World WebApps</h2>
         </header>
-        <main className="Pages-main">
+        <main className='Pages-main'>
           {this.getCurrentPage()}
         </main>
-        <footer className="Pages-footer">
-          <ul className="Pages-links">
-            <li key="home"><HistoryLink pathname="/home">Home</HistoryLink></li>
-            <li key="about"><HistoryLink pathname="/about">About</HistoryLink></li>
-            <li key="nothing-relevant"><HistoryLink pathname="/nothing-relevant">Nothing relevant</HistoryLink></li>
+        <footer className='Pages-footer'>
+          <ul className='Pages-links'>
+            <li key='home'><HistoryLink pathname='/home'>Home</HistoryLink></li>
+            <li key='about'><HistoryLink pathname='/about'>About</HistoryLink></li>
+            <li key='nothing-relevant'><HistoryLink pathname='/nothing-relevant'>Nothing relevant</HistoryLink></li>
           </ul>
         </footer>
-        <aside className="Pages-counters">
+        <aside className='Pages-counters'>
           <TotalVisitorsCount />
           <CurrentVisitorsCount />
         </aside>

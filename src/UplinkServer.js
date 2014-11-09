@@ -1,7 +1,5 @@
 var R = require('react-rails');
 
-var _ = require('lodash');
-
 var UplinkServer = R.SimpleUplinkServer.createServer({
   sessionTimeout: 10000,
 

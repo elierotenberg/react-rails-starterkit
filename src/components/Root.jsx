@@ -37,7 +37,7 @@ var Root = React.createClass({
 
   render() {
     return (
-      <div className="Root">
+      <div className='Root'>
         {this.props.children ? this.props.children : <Pages />}
       </div>
     );
